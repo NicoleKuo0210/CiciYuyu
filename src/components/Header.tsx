@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+const categories = ['Electronics', 'Clothing', 'Home', 'Toys', 'Books'];
+
 export default function Header() {
     return (
         <div>
@@ -17,18 +19,20 @@ export default function Header() {
             </header >
 
             {/* Category Navigation */}
-            < nav className="flex justify-center gap-4 bg-gray-100 py-3 border-b" >
-                {
-                    ['Electronics', 'Clothing', 'Home', 'Toys', 'Books'].map((cat) => (
-                        <button
-                            key={cat}
-                            className="px-4 py-2 bg-white rounded shadow hover:bg-gray-200"
-                        >
+            <nav className="flex justify-center gap-4 bg-gray-100 py-3 border-b">
+                {categories.map((cat) => (
+                    <Link key={cat} href={`/category/${cat.toLowerCase()}`}>
+                        <button className="px-4 py-2 bg-white rounded shadow hover:bg-gray-200 text-xl" aria-label={`Go to ${cat}`}>
                             {cat}
                         </button>
-                    ))
-                }
+                    </Link>
+                ))}
 
+                <Link href="/sell">
+                    <button className="px-4 py-2 bg-white rounded shadow hover:bg-gray-200 text-xl" aria-label="Go to Sell page">
+                        Sell
+                    </button>
+                </Link>
             </nav>
         </div>
     );

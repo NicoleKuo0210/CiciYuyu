@@ -1,12 +1,13 @@
-// Make sure to install the 'pg' package 
-import { drizzle } from 'drizzle-orm/node-postgres';
+import { drizzle } from "drizzle-orm/node-postgres";
+import { Client } from "pg";
 
-// You can specify any property from the node-postgres connection options
-const db = drizzle({ 
-  connection: { 
-    connectionString: process.env.DATABASE_URL,
-    ssl: true
-  }
+import { env } from "@/lib/env";
+
+const client = new Client({
+  connectionString: env.POSTGRES_URL,
+  connectionTimeoutMillis: 5000,
 });
- 
-const result = await db.execute('select 1');
+
+await client.connect();
+
+export const db = drizzle(client);
