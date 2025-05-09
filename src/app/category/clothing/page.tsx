@@ -16,8 +16,6 @@ export default async function ProductsPage() {
     .execute();
 
   return (
-    <div className="min-h-screen w-full bg-black text-white">
-      <div className="max-w-screen-xl mx-auto p-6">
         <div className="grid grid-cols-3 gap-6">
           {products.map((product) => (
             <ProductCard
@@ -31,7 +29,5 @@ export default async function ProductsPage() {
             />
           ))}
         </div>
-      </div>
-    </div>
   );
 }
