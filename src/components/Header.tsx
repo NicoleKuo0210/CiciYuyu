@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const categories = ['Electronics', 'Clothing', 'Home', 'Toys', 'Books'];
+import { categoryList } from '@/lib/category'
 
 export default function Header() {
     return (
@@ -20,12 +20,12 @@ export default function Header() {
 
             {/* Category Navigation */}
             <nav className="flex justify-center gap-4 py-3 border-b">
-                {categories.map((cat) => (
-                    // <Link key={cat} href={`/category/${cat.toLowerCase()}`}>
+                {categoryList.map((cat) => (
+                    <Link key={cat} href={`/category/${cat.toLowerCase()}`}>
                         <button className="px-4 py-2 shadow rounded hover:bg-gray-700 text-xl text-blue-400 hover:text-blue-600 border border-white" aria-label={`Go to ${cat}`}>
                             {cat}
                         </button>
-                    // </Link>
+                    </Link>
                 ))}
 
                 <Link href="/sell">

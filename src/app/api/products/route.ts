@@ -6,9 +6,9 @@ export async function POST(req: Request) {
   try {
     const data = await req.json();
 
-    const { name, description, price, quantity, image } = data;
+    const { name, description, price, quantity, image, category } = data;
 
-    if (!name || !description || !price || !quantity || !image) {
+    if (!name || !description || !price || !quantity || !image || !category) {
       return NextResponse.json({ error: 'Missing fields' }, { status: 400 });
     }
     const product = req.body;
@@ -20,6 +20,7 @@ export async function POST(req: Request) {
       price,
       quantity,
       image,
+      category,
     });
     console.log('Inserted product:', result); // Logs to console
 
