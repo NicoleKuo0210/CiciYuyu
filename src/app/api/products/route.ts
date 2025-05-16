@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { db } from '@/app/db'; // Adjust your path
-import { productsTable } from '@/app/db/schema'; // Adjust your path
+import { db } from '@/app/db';
+import { productsTable } from '@/app/db/schema';
 
 export async function POST(req: Request) {
   try {
@@ -11,9 +11,7 @@ export async function POST(req: Request) {
     if (!name || !description || !price || !quantity || !image || !category) {
       return NextResponse.json({ error: 'Missing fields' }, { status: 400 });
     }
-    const product = req.body;
 
-    // Log the result or return it in the response
     const result = await db.insert(productsTable).values({
       name,
       description,
@@ -22,10 +20,12 @@ export async function POST(req: Request) {
       image,
       category,
     });
-    console.log('Inserted product:', result); // Logs to console
+
+    console.log('Inserted product:', result);
 
     return NextResponse.json({ success: true });
   } catch (e) {
+    console.error('Product insert error:', e);
     return NextResponse.json({ error: 'Failed to create product' }, { status: 500 });
   }
 }

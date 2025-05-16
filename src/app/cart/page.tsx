@@ -2,6 +2,7 @@ import { db } from "@/app/db";
 import { cartTable, productsTable } from "@/app/db/schema";
 import { eq } from "drizzle-orm";
 import ProductCard from "@/components/ProductCard";
+import CheckoutButton from "@/components/CheckoutButton";
 import { notFound } from "next/navigation";
 
 export default async function CartPage() {
@@ -19,7 +20,7 @@ export default async function CartPage() {
     .innerJoin(productsTable, eq(cartTable.productId, productsTable.id));
 
   if (cartItems.length === 0) {
-    notFound(); // optional: redirect to 404 or empty cart page
+      return (<h1 className="p-4 text-2xl font-bold mb-4">Your cart is empty</h1>)
   }
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -66,6 +67,7 @@ export default async function CartPage() {
       {/* Total Section */}
       <div className="mt-10 text-2xl font-bold text-green-700">
         Total: <span className="text-3xl ml-4">{totalPrice}</span> NTD
+        <CheckoutButton/>
       </div>
     </div>
   );

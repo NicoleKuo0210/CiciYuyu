@@ -19,7 +19,7 @@ export const productsTable = pgTable(
     description: varchar("description", { length: 280 }).notNull(),
     price: integer("price").notNull(),
     quantity: integer("quantity").notNull(),
-    image: varchar("image", { length: 255 }).notNull().unique(), // URL or path to the image
+    image: varchar("image", { length: 255 }).notNull(), // URL or path to the image
     category: categoryEnum("category").notNull(), // <-- Add this
   },
   (table) => ({
