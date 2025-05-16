@@ -6,11 +6,11 @@ export default function Header() {
     return (
         <div>
             {/* Header */}
-            < header className="flex justify-between items-center px-6 py-6 border-b" >
+            < header className="flex justify-between items-center px-6 py-6 border-b mt-2" >
                 <Link href="/">
                     <h1 className="text-5xl font-bold font-serif">
                     <span className="text-gray-100">⚡Shop</span>
-                    <span className="text-teal-300">EE⚡</span>
+                    <span className="text-teal-400">EE⚡</span>
                     </h1>
                 </Link>
                 <div className="flex items-center gap-4">

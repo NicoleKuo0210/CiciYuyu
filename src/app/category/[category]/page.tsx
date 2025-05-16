@@ -32,18 +32,18 @@ export default async function ProductsPage({ params }: { params: { category: str
 
   if (products.length === 0) {
     return (
-      <h1 className="p-4 text-2xl font-bold mb-4">Empty</h1>
+      <h1 className="flex justify-center p-4 text-2xl font-bold mb-4 w-full">Empty</h1>
     )
   }
   else {
     return (
       <div className="p-4">
-        <h1 className="text-2xl font-bold mb-4">
+        <h1 className="text-2xl font-bold mb-4 flex justify-center w-full">
           {categoryParam.charAt(0).toUpperCase() + categoryParam.slice(1)}
         </h1>
-        <div className="grid grid-cols-3 gap-1 ml-7">
+        <div className="grid grid-cols-3 gap-6 ml-7">
           {products.map((product) => (
-            <div key={product.id} className="w-[500px] p-6 bg-white rounded hover:bg-gray-200  shadow h-full block">
+            <div key={product.id} className="max-w-[500px] p-6 bg-white rounded hover:bg-gray-200 shadow h-full block ">
               <Link
                 href={`/product/${product.id}`}>
                 <ProductCard
