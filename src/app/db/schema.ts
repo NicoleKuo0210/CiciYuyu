@@ -26,4 +26,12 @@ export const productsTable = pgTable(
     nameIndex: index("name_index").on(table.name),
   })
 );
+
+export const cartTable = pgTable("cart_items", {
+  id: serial("id").primaryKey(),
+  productId: integer("product_id").notNull().references(() => productsTable.id),
+  quantity: integer("quantity").notNull().default(1),
+});
+
+
 //run migration after modifying

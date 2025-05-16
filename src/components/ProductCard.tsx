@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 type ProductProps = {
   id: number;
   name: string;
@@ -18,11 +16,6 @@ export default function ProductCard({
   image,
 }: ProductProps) {
   return (
-    <div className="w-[300px] h-full">
-      <Link
-        href={`/product/${id}`}
-        className="p-4 bg-white rounded hover:bg-gray-200  shadow h-full block"
-      >
         <div className="flex gap-4 items-start">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -38,7 +31,5 @@ export default function ProductCard({
             </div>
           </div>
         </div>
-      </Link>
-    </div>
   );
 }

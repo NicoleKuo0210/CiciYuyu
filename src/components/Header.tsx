@@ -21,9 +21,9 @@ export default function Header() {
             {/* Category Navigation */}
             <nav className="flex justify-center gap-4 py-3 border-b">
                 {categoryList.map((cat) => (
-                    <Link key={cat} href={`/category/${cat.toLowerCase()}`}>
+                    <Link key={cat} href={`/category/${cat}`}>
                         <button className="px-4 py-2 shadow rounded hover:bg-gray-700 text-xl text-blue-400 hover:text-blue-600 border border-white" aria-label={`Go to ${cat}`}>
-                            {cat}
+                            {cat.charAt(0).toUpperCase() + cat.slice(1)}
                         </button>
                     </Link>
                 ))}
