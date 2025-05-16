@@ -1,10 +1,8 @@
-import { ReactNode } from 'react';
-
 export default function Home() {
   return (
     <div>
       {/* Main Content */}
-      <main className="p-6">yeeeeee</main>
+      <main className="text-5xl p-6">Welcome to ShopEE</main>
     </div>
   );
 }

@@ -6,30 +6,35 @@ export default function Header() {
     return (
         <div>
             {/* Header */}
-            < header className="flex justify-between items-center px-6 py-4 border-b" >
-                <h1 className="text-2xl font-bold">shopEE</h1>
+            < header className="flex justify-between items-center px-6 py-6 border-b" >
+                <Link href="/">
+                    <h1 className="text-5xl font-bold font-serif">
+                    <span className="text-gray-100">⚡Shop</span>
+                    <span className="text-teal-300">EE⚡</span>
+                    </h1>
+                </Link>
                 <div className="flex items-center gap-4">
                     <Link href="/cart">
-                        <button className="text-xl" aria-label="Go to cart">🛒</button>
+                        <button className="text-4xl" aria-label="Go to cart">🛒</button>
                     </Link>
-                    <button className="px-4 py-2 bg-gray-100 rounded hover:bg-blue-900">
+                    <button className="px-4 py-2 text-xl font-bold text-gray-200 bg-teal-600 rounded hover:bg-teal-800">
                         Login
                     </button>
                 </div>
             </header >
 
             {/* Category Navigation */}
-            <nav className="flex justify-center gap-4 py-3 border-b">
+            <nav className="flex justify-center gap-4 py-3 border-b bg-gray-100">
                 {categoryList.map((cat) => (
                     <Link key={cat} href={`/category/${cat}`}>
-                        <button className="px-4 py-2 shadow rounded hover:bg-gray-700 text-xl text-blue-400 hover:text-blue-600 border border-white" aria-label={`Go to ${cat}`}>
+                        <button className="px-4 py-2 shadow rounded text-xl font-bold text-gray-200 bg-teal-600 hover:bg-teal-800" aria-label={`Go to ${cat}`}>
                             {cat.charAt(0).toUpperCase() + cat.slice(1)}
                         </button>
                     </Link>
                 ))}
 
                 <Link href="/sell">
-                    <button className="px-4 py-2 shadow rounded hover:bg-gray-700 text-xl text-stone-400 border border-white" aria-label="Go to Sell page">
+                    <button className="px-4 py-2 shadow rounded text-xl font-bold text-gray-200 bg-sky-600 hover:bg-sky-800" aria-label="Go to Sell page">
                         Sell
                     </button>
                 </Link>

@@ -41,9 +41,9 @@ export default async function ProductsPage({ params }: { params: { category: str
         <h1 className="text-2xl font-bold mb-4">
           {categoryParam.charAt(0).toUpperCase() + categoryParam.slice(1)}
         </h1>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 gap-1 ml-7">
           {products.map((product) => (
-            <div key={product.id} className="w-[500px] p-4 bg-white rounded hover:bg-gray-200  shadow h-full block">
+            <div key={product.id} className="w-[500px] p-6 bg-white rounded hover:bg-gray-200  shadow h-full block">
               <Link
                 href={`/product/${product.id}`}>
                 <ProductCard
@@ -55,7 +55,9 @@ export default async function ProductsPage({ params }: { params: { category: str
                   image={product.image}
                 />
               </Link>
-              <AddToCartButton productId={product.id} availableQuantity={product.quantity} />
+              <div className="mt-5">
+                <AddToCartButton productId={product.id} availableQuantity={product.quantity} />
+              </div>
             </div>
           ))}
         </div>

@@ -41,11 +41,11 @@ export default function AddToCartButton({
   };
 
   return (
-    <div className="flex items-center gap-2 mt-2">
-      <div className="flex items-center border rounded px-1">
+    <div className="flex justify-end-safe gap-2 mt-2">
+      <div className="flex justify-between items-center border-2 border-teal-600 rounded px-2 bg-white">
         <button
           onClick={decrement}
-          className="px-2 text-sm text-gray-700 hover:text-black"
+          className="px-2 text-xl text-gray-700 hover:text-black"
         >
           −
         </button>
@@ -58,11 +58,11 @@ export default function AddToCartButton({
             const val = Math.max(1, Math.min(stockLeft, Number(e.target.value)));
             setQuantity(val);
           }}
-          className="w-12 text-center border-none outline-none"
+          className="w-12 text-xl text-center text-gray-700 border-none outline-none"
         />
         <button
           onClick={increment}
-          className="px-2 text-sm text-gray-700 hover:text-black"
+          className="px-2 text-xl text- text-gray-700 hover:text-black"
         >
           +
         </button>
@@ -70,11 +70,15 @@ export default function AddToCartButton({
 
       <button
         onClick={handleAddToCart}
-        className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded"
+        className={` text-white px-4 py-2 rounded transtion
+        ${stockLeft === 0
+            ? "bg-gray-400 cursor-not-allowed"
+            : "bg-teal-500 hover:bg-teal-700"
+          }`}
         disabled={isPending || stockLeft === 0}
       >
         {stockLeft === 0 ? "Out of stock" : isPending ? "Adding..." : "Add to Cart"}
       </button>
-    </div>
+    </div >
   );
 }
