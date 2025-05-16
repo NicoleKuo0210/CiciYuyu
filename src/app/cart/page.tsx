@@ -21,10 +21,15 @@ export default async function CartPage() {
   if (cartItems.length === 0) {
     notFound(); // optional: redirect to 404 or empty cart page
   }
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 
   return (
     <div className="p-4 flex flex-col items-center">
       <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
+      {/* Purchase List */}
       <div className="flex flex-col gap-6 items-center">
         {cartItems.map((item) => (
           <div
@@ -57,6 +62,10 @@ export default async function CartPage() {
             </div>
           </div>
         ))}
+      </div>
+      {/* Total Section */}
+      <div className="mt-10 text-2xl font-bold text-green-700">
+        Total: <span className="text-3xl ml-4">{totalPrice}</span> NTD
       </div>
     </div>
   );
