@@ -1,6 +1,15 @@
+## 
+docker compose up -d
+
+pnpm migrate
+
+pnpm dev
+
+## Truncate all tables
+psql -U [USER] -d [DB] -h localhost -c "TRUNCATE TABLE products, cart_items RESTART IDENTITY CASCADE;"
+
+
 ## Getting Started 0
-
-
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 

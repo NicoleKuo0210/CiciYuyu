@@ -1,9 +1,11 @@
 'use client';
 
 import { useTransition } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function CheckoutButton() {
   const [isPending, startTransition] = useTransition();
+  const router = useRouter();
 
   const handleCheckout = async () => {
     startTransition(async () => {
@@ -17,6 +19,9 @@ export default function CheckoutButton() {
         alert('Checkout successful!');
         location.reload(); // Refresh the page
       }
+    });
+    startTransition(() => {
+      router.refresh(); // Refresh page to reflect changes
     });
   };
 

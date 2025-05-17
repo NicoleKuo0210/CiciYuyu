@@ -116,7 +116,7 @@ return (
       className="border p-2 mb-4 w-full"
     >
       {categoryList.map((cat) => (
-        <option key={cat} value={cat}>
+        <option key={cat} value={cat} className='text-gray-700'>
           {cat.charAt(0).toUpperCase() + cat.slice(1)}
         </option>
       ))}
@@ -125,7 +125,7 @@ return (
     <button
       onClick={handleSubmit}
       disabled={loading}
-      className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+      className="bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700"
     >
       {loading ? 'Creating...' : 'Create Product'}
     </button>

@@ -4,6 +4,7 @@ import { eq } from "drizzle-orm";
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import CheckoutButton from "@/components/CheckoutButton";
+import CartModifier from "@/components/CartModifier";
 
 export default async function CartPage() {
   const cartItems = await db
@@ -40,15 +41,20 @@ export default async function CartPage() {
             <div className="flex items-center justify-between">
               <div className="flex-shrink-0">
                 <Link href={`/product/${item.id}`}>
-                <ProductCard
-                  id={item.id}
-                  name={item.name}
-                  description={item.description}
-                  price={item.price}
-                  quantity={item.stock} // Consider renaming this to make meaning clearer
-                  image={item.image}
-                />
+                  <ProductCard
+                    id={item.id}
+                    name={item.name}
+                    description={item.description}
+                    price={item.price}
+                    quantity={item.stock} // Consider renaming this to make meaning clearer
+                    image={item.image}
+                  />
                 </Link>
+                <CartModifier
+                  productId={item.id}
+                  initialQuantity={item.quantity}
+                  maxQuantity={item.stock}
+                />
               </div>
               {/* Right side info */}
               <div className="ml-6 text-right pr-8">

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useTransition } from "react";
+import { useRouter } from 'next/navigation';
 
 export default function AddToCartButton({
   productId,
@@ -12,10 +13,10 @@ export default function AddToCartButton({
   const [isPending, startTransition] = useTransition();
   const [quantity, setQuantity] = useState(1);
   const [stockLeft, setStockLeft] = useState(availableQuantity);
+  const router = useRouter();
 
   const handleAddToCart = () => {
     if (quantity <= 0 || quantity > stockLeft) return;
-
     startTransition(async () => {
       const res = await fetch("/api/cart", {
         method: "POST",
@@ -29,6 +30,7 @@ export default function AddToCartButton({
         setStockLeft((prev) => prev - quantity);
         setQuantity(1); // Reset input
       }
+      router.refresh();
     });
   };
 
