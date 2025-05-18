@@ -101,11 +101,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## <a name="reflection">🖊️ Reflection</a>
 
 name:郭宥均
+
 studentID:B13901008
+
 reflection:
 Even though ChatGPT wrote 90% of our code, I think I have a better understanding of website designing, by debugging and setting up the project from scratch. Actually, since we’ve completed the project hastily, I feel like I have nothing to say as there are still so many techniques I haven’t learned well and made good use of. Hopefully, during summer vacation, I can thoroughly review what we’ve gone through in the last two semesters. I am quite interested in making an appealing UI (even though our UI sucks in this project. ) and I hope that I can help our department with designing websites in the future.
 
 name:劉家妤
+
 studentID:B13901095
+
 reflection:
 It has been a cool experience for me to build a website from scratch, although the part that I was responsible for is critically small. (Thanks to my powerful teammate and ChatGPT, of course) But I still earn a great amount of website designing from the project, I would hopefully spend most of my summer vacation time to review what I have learned this year.(And by writing this reflection, I am aware that not only the website designing should I review, but also my poor vocabulary.) Finishing this project certainly endows me with an enormous sense of achievement, and I hope that it will keep supporting my passion in website designing in the future.
