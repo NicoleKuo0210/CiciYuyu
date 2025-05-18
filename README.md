@@ -31,8 +31,11 @@ We used Link and dynamic pages to keep the website structure clean.
 
 ## <a name="features">🔋 Features</a>
 👉 Add New Products Easily: Seamlessly add new products to the store and have them instantly displayed on the page for users to browse and shop.
+
 👉 Interactive Shopping Experience: Users can view product stock, adjust quantities before adding items to their cart, and get a clear idea of what's available in real-time.
+
 👉 Smart Cart Management: A clean and intuitive cart system lets users update or remove items easily — and even clear the entire cart without proceeding to checkout.
+
 👉 Visually Appealing Design: Beautiful and responsive UI ensures a smooth and modern shopping experience on any device, from desktop to mobile.
 ## <a name="quick-start">🤸 Quick Start</a>
 
@@ -85,7 +88,7 @@ pnpm migrate
 ### 5. Start the App
 
 ```bash
-npm run dev / pnpm dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
