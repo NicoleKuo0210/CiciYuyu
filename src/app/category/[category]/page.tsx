@@ -9,7 +9,7 @@ import { categoryList, Category } from "@/lib/category"
 import { notFound } from "next/navigation";
 
 export default async function ProductsPage({ params }: { params: { category: string } }) {
-  console.log("📦 category param:", params); // should log during server render
+  ////console.log("📦 category param:", params); // should log during server render
   const categoryParam = params.category;
 
   if (!categoryList.includes(categoryParam as Category)) {

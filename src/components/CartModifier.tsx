@@ -35,16 +35,6 @@ export default function CartModifier({
                 },
                 body: JSON.stringify({ productId, quantity }),
             });
-            // if (quantity === 0) {
-            //     // DELETE from cart
-            //     await fetch(`/api/cart`, {
-            //         method: 'DELETE',
-            //         headers: {
-            //             'Content-Type': 'application/json',
-            //         },
-            //         body: JSON.stringify({ productId }),
-            //     });
-            // }
         }
         startTransition(() => {
             router.refresh(); // Refresh page to reflect changes

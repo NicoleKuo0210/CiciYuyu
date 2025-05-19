@@ -75,6 +75,7 @@ export default async function CartPage() {
       {/* Total Section */}
       <div className="mt-10 text-2xl font-bold text-green-700">
         Total: <span className="text-3xl ml-4">{totalPrice}</span> NTD
+        <span className="ml-5 text-gray-600 font-bold">{"  "}</span>
         <CheckoutButton />
       </div>
     </div>
